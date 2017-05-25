@@ -1,0 +1,39 @@
+<div>
+    <div class="container">
+        <div class="col-md-1"><input #query query.value=''></div>
+        <div class="col-md-1"> <button (click)="onQuery(query.value)">Search</button></div>
+        <div class="text-center">
+            <h1>Search your love movie</h1>
+
+            <!-- items being paged -->
+            <div *ngFor="let item of pagedItems">{{item.original_title}}<br /> <img alt="not found" width="200px" height="200px" src= "https://image.tmdb.org/t/p/w500/{{item.poster_path}}" ></div>
+            <!-- pager -->
+            <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+                <li [ngClass]="{disabled:pager.currentPage === 1}">
+                    <a (click)="setPage(1)">First</a>
+                </li>
+                <li [ngClass]="{disabled:pager.currentPage === 1}">
+                    <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+                </li>
+                <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                    <a (click)="setPage(page)">{{page}}</a>
+                </li>
+                <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                    <a (click)="setPage(pager.currentPage + 1)">Next</a>
+                </li>
+                <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                    <a (click)="setPage(pager.totalPages)">Last</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <hr />
+    <div class="credits text-center">
+        <p>
+            <a href="http://jasonwatmore.com/post/2016/08/23/angular-2-pagination-example-with-logic-like-google" target="_top">Angular 2 - Pagination Example with logic like Google</a>
+        </p>
+        <p>
+            <a href="http://jasonwatmore.com" target="_top">JasonWatmore.com</a>
+        </p>
+    </div>
+</div>

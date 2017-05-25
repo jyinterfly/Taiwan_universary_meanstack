@@ -1,0 +1,20 @@
+{
+  "name": "searchmoves",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "Q": "0.0.1",
+    "express": "^4.15.3",
+    "mongoose": "^4.10.0",
+    "q": "^1.5.0",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1",
+    "tmdbv3": "^0.1.2"
+  }
+}
