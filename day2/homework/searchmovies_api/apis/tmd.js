@@ -14,7 +14,6 @@ class tmd {
     getmoviedetail(query,page){
         var deferred = Q.defer();
         var url = this.url + "search/movie?api_key=" + this.key +"&query=" + query + "&page=" + page;
-        console.log("getmoviedetail:" + url);
         deferred.resolve(rp(url));
         return deferred.promise;
     }
